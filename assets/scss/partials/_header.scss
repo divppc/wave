@@ -1,18 +1,21 @@
 header {
 	position: fixed;
 	padding: 15px;
-	z-index: 1;
+	z-index: 3;
 	width: 100%;
 	display: flex;
 	align-items: center;
 	min-width: 320px;
 	flex-wrap: wrap;
 	transition: 0.3s;
-	background: transparent;
 
 	@media (min-width: $responsive-laptop) {
 		padding: 17px 33px;
 		flex-wrap: nowrap;
+	}
+
+	&.scrolled {
+		background: #375c6b;
 	}
 
 	.logo {

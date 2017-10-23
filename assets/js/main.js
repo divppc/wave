@@ -1,18 +1,28 @@
 $(document).ready(function () {
 	
-	//mobile toggle function start
+	//mobile toggle function
 
-  $(".mobile-menu").on("click", function () {
+  $(".mobile-menu").on("click", function (e) {
+  	e.preventDefault();
     $(this).toggleClass('active');
     $('.menu-line').toggleClass('active');
   });
 
-  // function mobileToggle(e) {
-  //   if ($(e).hasClass("active") == true) {
-  //     $(e).animate({maxHeight: "0"}, 300).removeClass("active");
-  //   } else {
-  //     $(e).animate({maxHeight: "100vh"}, 300).addClass("active");
-  //   }
-  // };  
-  //mobile toggle function end
+  //header bg
+  var headerBg = function () {
+  	if($(window).scrollTop() > 0 && !$('header').hasClass('scrolled')) {
+  		$('header').addClass('scrolled');
+  	} else if($(window).scrollTop() == 0){
+  		$('header').removeClass('scrolled');
+  	}
+  };
+
+  $(document).on('scroll', function () {
+		headerBg();
+	});
+
+  //switch language
+  $('.choosen-language').on('click', function () {
+    $(this).toggleClass('active');
+  });
 });
